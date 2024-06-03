@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'comments',
     'likes',
     'followers',
-    'messages',
+    'direct_messages',
     'notifications',
     'realtime',
 ]
@@ -83,8 +83,12 @@ WSGI_APPLICATION = 'social_media.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'socialmedia',
+        'USER': 'root',
+        'PASSWORD': 'sardorbekA7071',
+        'HOST': 'localhost',  # Or the host where your MySQL server is running
+        'PORT': '3306',       # Or the port your MySQL server is listening on
     }
 }
 

@@ -23,5 +23,6 @@ urlpatterns = [
     path('api/posts/', include('posts.urls')),
     path('api/comments/', include('comments.urls')),
     path('api/followers/', include('followers.urls')),
+    path('api/direct_messages/', include('direct_messages.urls')),
 ]
 
