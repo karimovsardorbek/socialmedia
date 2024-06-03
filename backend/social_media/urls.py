@@ -24,5 +24,10 @@ urlpatterns = [
     path('api/comments/', include('comments.urls')),
     path('api/followers/', include('followers.urls')),
     path('api/direct_messages/', include('direct_messages.urls')),
+    path('api/notifications/', include('notifications.urls')),
 ]
 
+from django.urls import re_path
+from realtime.routing import websocket_urlpatterns
+
+urlpatterns += websocket_urlpatterns

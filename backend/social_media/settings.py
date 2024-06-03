@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'direct_messages',
     'notifications',
     'realtime',
+    'channels',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -77,7 +79,15 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'social_media.wsgi.application'
 
-
+# Channels layer configuration
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [('127.0.0.1', 8000)],
+        },
+    },
+}
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
